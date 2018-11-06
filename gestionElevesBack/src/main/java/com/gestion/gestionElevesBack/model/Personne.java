@@ -79,4 +79,17 @@ public class Personne implements Serializable {
     public void setEtablissement(Etablissement etablissement) {
         this.etablissement = etablissement;
     }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "idPersonne=" + idPersonne +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                ", matricule='" + matricule + '\'' +
+                ", password='" + password + '\'' +
+                ", etablissement=" + etablissement +
+                '}';
+    }
 }

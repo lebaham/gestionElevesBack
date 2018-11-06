@@ -50,4 +50,14 @@ public class Note implements Serializable {
     public void setMatiere(Matiere matiere) {
         this.matiere = matiere;
     }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "idNote=" + idNote +
+                ", valeur='" + valeur + '\'' +
+                ", eleve=" + eleve +
+                ", matiere=" + matiere +
+                '}';
+    }
 }

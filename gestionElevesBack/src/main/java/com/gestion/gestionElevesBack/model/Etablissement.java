@@ -52,4 +52,14 @@ public class Etablissement implements Serializable {
     public void setEleves(List<Eleve> eleves) {
         this.eleves = eleves;
     }
+
+    @Override
+    public String toString() {
+        return "Etablissement{" +
+                "idEtablissement=" + idEtablissement +
+                ", nom='" + nom + '\'' +
+                ", professeurs=" + professeurs +
+                ", eleves=" + eleves +
+                '}';
+    }
 }

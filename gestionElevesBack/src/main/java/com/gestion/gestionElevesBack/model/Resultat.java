@@ -49,4 +49,14 @@ public class Resultat {
     public void setEleve(Eleve eleve) {
         this.eleve = eleve;
     }
+
+    @Override
+    public String toString() {
+        return "Resultat{" +
+                "idResultat=" + idResultat +
+                ", moyenne=" + moyenne +
+                ", rang=" + rang +
+                ", eleve=" + eleve +
+                '}';
+    }
 }

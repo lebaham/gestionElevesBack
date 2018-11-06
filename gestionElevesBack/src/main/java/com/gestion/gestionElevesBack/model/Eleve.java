@@ -17,4 +17,11 @@ public class Eleve extends Personne {
     public List<Note> getNotes() {
         return notes;
     }
+
+    @Override
+    public String toString() {
+        return "Eleve{" +
+                "notes=" + notes +
+                '}';
+    }
 }

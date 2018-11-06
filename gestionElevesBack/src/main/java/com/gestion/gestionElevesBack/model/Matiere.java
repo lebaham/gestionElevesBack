@@ -39,4 +39,13 @@ public class Matiere implements Serializable {
     public void setCoeff(int coeff) {
         this.coeff = coeff;
     }
+
+    @Override
+    public String toString() {
+        return "Matiere{" +
+                "idMatiere=" + idMatiere +
+                ", intitule='" + intitule + '\'' +
+                ", coeff=" + coeff +
+                '}';
+    }
 }

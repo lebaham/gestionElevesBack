@@ -30,4 +30,12 @@ public class Professeur extends Personne {
     public void setMatieres(List<Matiere> matieres) {
         this.matieres = matieres;
     }
+
+    @Override
+    public String toString() {
+        return "Professeur{" +
+                "status='" + status + '\'' +
+                ", matieres=" + matieres +
+                '}';
+    }
 }
