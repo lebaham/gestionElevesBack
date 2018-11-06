@@ -1,5 +1,6 @@
 package com.gestion.gestionElevesBack.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.mapping.ToOne;
 
 import javax.persistence.*;
