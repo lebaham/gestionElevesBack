@@ -3,6 +3,8 @@ package com.gestion.gestionElevesBack.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 @Entity
 public class Role {
@@ -10,6 +12,8 @@ public class Role {
     @GeneratedValue
     private Long idRole;
     private String role;
+    @ManyToMany(mappedBy = "roles")
+    private List<Personne> personnes;
 
     public Role() {
     }
@@ -30,11 +34,22 @@ public class Role {
         this.role = role;
     }
 
+    public List<Personne> getPersonnes() {
+        return personnes;
+    }
+
+    public void setPersonnes(List<Personne> personnes) {
+        this.personnes = personnes;
+    }
+
     @Override
     public String toString() {
         return "Role{" +
                 "idRole=" + idRole +
                 ", role='" + role + '\'' +
+                ", personnes=" + personnes +
                 '}';
     }
 }
+
+

@@ -19,10 +19,13 @@ public class Personne implements Serializable {
     private int age;
     private String matricule;
     private String password;
+    @Transient
+    private String passwordConfirm;
     @ManyToOne
     @JoinColumn(name = "CODE_ETB")
     private Etablissement etablissement;
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name = "personne_role", joinColumns = @JoinColumn(name = "id_personne"), inverseJoinColumns = @JoinColumn(name = "id_personne"))
     private List<Role>roles;
 
     public Personne() {
@@ -92,6 +95,14 @@ public class Personne implements Serializable {
         this.roles = roles;
     }
 
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+
     @Override
     public String toString() {
         return "Personne{" +
@@ -101,6 +112,7 @@ public class Personne implements Serializable {
                 ", age=" + age +
                 ", matricule='" + matricule + '\'' +
                 ", password='" + password + '\'' +
+                ", passwordConfirm='" + passwordConfirm + '\'' +
                 ", etablissement=" + etablissement +
                 ", roles=" + roles +
                 '}';
