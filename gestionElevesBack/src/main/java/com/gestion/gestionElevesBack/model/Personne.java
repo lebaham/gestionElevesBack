@@ -25,7 +25,7 @@ public class Personne implements Serializable {
     @JoinColumn(name = "CODE_ETB")
     private Etablissement etablissement;
     @ManyToMany
-    @JoinTable(name = "personne_role", joinColumns = @JoinColumn(name = "id_personne"), inverseJoinColumns = @JoinColumn(name = "id_personne"))
+    @JoinTable(name = "personne_role", joinColumns = @JoinColumn(name = "id_personne"), inverseJoinColumns = @JoinColumn(name = "id_role"))
     private List<Role>roles;
 
     public Personne() {
