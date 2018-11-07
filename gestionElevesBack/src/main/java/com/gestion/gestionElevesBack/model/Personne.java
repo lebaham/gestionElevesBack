@@ -5,6 +5,7 @@ import org.hibernate.mapping.ToOne;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -21,6 +22,8 @@ public class Personne implements Serializable {
     @ManyToOne
     @JoinColumn(name = "CODE_ETB")
     private Etablissement etablissement;
+    @OneToMany
+    private List<Role>roles;
 
     public Personne() {
     }
@@ -81,6 +84,14 @@ public class Personne implements Serializable {
         this.etablissement = etablissement;
     }
 
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "Personne{" +
@@ -91,6 +102,7 @@ public class Personne implements Serializable {
                 ", matricule='" + matricule + '\'' +
                 ", password='" + password + '\'' +
                 ", etablissement=" + etablissement +
+                ", roles=" + roles +
                 '}';
     }
 }
